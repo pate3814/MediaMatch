@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Login Form Design</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="static/css/style2.css">
+<body>
+    <div class="navbar">
+        <div class="container">
+            <a class="logo" href="#">Show<span>Swiper</span></a>
+
+            <img id="mobile-cta" class="mobile-menu" src="static/images/menu.svg" alt="Open Navigation">
+
+            <nav>
+                <img id="mobile-exit" class="mobile-menu-exit" src="static/images/exit.svg" alt="Close Navigation">
+                
+                <ul class="primary-nav">
+                    <!--<li  onclick="changeToMovieMatch()" id = "movieMatchPage" name="movieMatchPage"><a >Movie Match</a></li>-->
+                    <li class = current onclick="changeToLogin()"><a >Log In</a></li>
+                </ul>
+
+                <ul class="secondary-nav">
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="loginbox">
+        <h1>Login Here</h1>
+        <form name="login_form">
+            <p>Username</p>
+            <input type="text" name="username" placeholder="Enter Username">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter Password">
+            <input type="submit" name="" value="Login">
+            <a href="#">Lost your password?</a><br>
+            <a onclick="changeToSignUp()">Don't have an account?</a>
+        </form>
+        
+    </div>
+</body>
+<script>
+
+    $("form[name=login_form").submit(function(e){
+        var $form = $(this);
+        var $error = $form.find(".error");
+        var data = $form.serialize();
+        $.ajax({
+            url: "/signin",
+            type: "post",
+            data: data,
+            dataType: "json",
+            success: function(resp){
+                alert("success")
+                window.location = `${window.location.origin}`
+            },
+            error: function(resp){
+                alert("Did not sign in, try again")
+            }
+        })
+        e.preventDefault();
+    })
+    function changeToMovieMatch()
+    {
+        window.location = window.location.origin
+        console.log(window.location.origin)
+    }
+
+    function changeToGenre()
+    {
+        window.location = `${window.location.origin}/genre`
+        console.log(window.location)
+    }
+
+    function changeToLogin()
+    {
+        window.location = `${window.location.origin}/login`
+        console.log(window.location)
+    }
+
+    function changeToSignout()
+		{
+			window.location = `${window.location.origin}/signout`
+			console.log(window.location)
+		}
+    function changeToSignUp()
+    {
+        window.location = `${window.location.origin}/register`
+        console.log(window.location)
+    }
+    function changeToInfo()
+		{
+			window.location = `${window.location.origin}/listInfo`
+			console.log(window.location)
+		}
+</script>
+</head>
+</html>

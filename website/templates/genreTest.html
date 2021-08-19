@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="static/css/style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,500&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+		/>
+		<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="navbar">
+			<div class="container">
+				<a class="logo" href="#">Show<span>Swiper</span></a>
+	
+				<img id="mobile-cta" class="mobile-menu" src="static/images/menu.svg" alt="Open Navigation">
+	
+				<nav>
+					<img id="mobile-exit" class="mobile-menu-exit" src="static/images/exit.svg" alt="Close Navigation">
+					
+					<ul class="primary-nav">
+						<!--<li onclick="changeToMovieMatch()" id = "movieMatchPage" name="movieMatchPage"><a >Movie Match</a></li>-->
+						<li class = current onclick="changeToGenre()"><a >Genre Selection</a></li>
+						<li onclick="changeToList()" ><a >Watch List</a></li>
+						<li onclick="changeToInfo()" ><a >Watch Info</a></li>
+              			<li onclick="changeToNoList()"><a >Pass List</a></li>
+						<li onclick="changeToSignout()"><a >Sign Out</a></li>
+					</ul>
+	
+					<ul class="secondary-nav">
+						<li class="go-premium-cta" onclick="changeToMovieMatch()"><a>Show Swiper Application</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<section class="hero">
+			<div class="container">
+				<div class="wrapper">
+					<div class="title">
+					</div>
+					<h1>Include Genres</h1>
+					<div class="container2" id="checkboxes1">
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="action" id="28">
+						<div class="option_inner facebook">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-fighter-jet"></i></div>
+						  <div class="name">Action</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="adventure" id="12">
+						<div class="option_inner twitter">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-hiking"></i></div>
+						  <div class="name">Adventure</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="animation" id="16">
+						<div class="option_inner instagram">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-paint-brush"></i></div>
+						  <div class="name">Animation</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="comedy" id="35">
+						<div class="option_inner linkedin">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="far fa-laugh-squint"></i></div>
+						  <div class="name">Comedy</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="crime" id="80">
+						<div class="option_inner whatsapp">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-skull-crossbones"></i></div>
+						  <div class="name">Crime</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="documentary" id="99">
+						<div class="option_inner google">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-book-reader"></i></div>
+						  <div class="name">Documentary</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="drama" id="18">
+						<div class="option_inner reddit">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-theater-masks"></i></div>
+						  <div class="name">Drama</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="family" id="10751">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-user-friends"></i></div>
+						  <div class="name">Family</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="fantasy" id="14">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-dragon"></i></div>
+						  <div class="name">Fantasy</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="history" id="36">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-school"></i></div>
+						  <div class="name">History</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="horror" id="27">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="far fa-grimace"></i></div>
+						  <div class="name">Horror</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="music" id="10402">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-music"></i></div>
+						  <div class="name">Music</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="mystery" id="9648">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-search"></i></div>
+						  <div class="name">Mystery</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="romance" id="10749">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="far fa-heart"></i></div>
+						  <div class="name">Romance</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="science fiction" id="878">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-robot"></i></div>
+						  <div class="name">Science Fiction</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="tv movie" id="10770">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-tv"></i></div>
+						  <div class="name">TV Movie</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="thriller" id="53">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-user-secret"></i></div>
+						  <div class="name">Thriller</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="war" id="10752">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-bomb"></i></div>
+						  <div class="name">War</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="western" id="37">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-hat-cowboy-side"></i></div>
+						  <div class="name">Western</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="button" class="checkbox2" onclick="start_search()">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-check"></i></div>
+						  <div class="name">Submit</div>
+						</div>
+					  </label>
+					</div>
+				</div>
+			<div class="wrapper">
+				<div class="title">
+				</div>
+				<h1>Exclude Genres</h1>
+				<div class="container2" id="checkboxes2">
+					<label class="option_item">
+						<input type="checkbox" class="checkbox" name="action" id="28">
+						<div class="option_inner facebook">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-fighter-jet"></i></div>
+						  <div class="name">Action</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="adventure" id="12">
+						<div class="option_inner twitter">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-hiking"></i></div>
+						  <div class="name">Adventure</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="animation" id="16">
+						<div class="option_inner instagram">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-paint-brush"></i></div>
+						  <div class="name">Animation</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="comedy" id="35">
+						<div class="option_inner linkedin">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="far fa-laugh-squint"></i></div>
+						  <div class="name">Comedy</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="crime" id="80">
+						<div class="option_inner whatsapp">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-skull-crossbones"></i></div>
+						  <div class="name">Crime</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="documentary" id="99">
+						<div class="option_inner google">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-book-reader"></i></div>
+						  <div class="name">Documentary</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="drama" id="18">
+						<div class="option_inner reddit">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-theater-masks"></i></div>
+						  <div class="name">Drama</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="family" id="10751">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-user-friends"></i></div>
+						  <div class="name">Family</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="fantasy" id="14">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-dragon"></i></div>
+						  <div class="name">Fantasy</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="history" id="36">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-school"></i></div>
+						  <div class="name">History</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="horror" id="27">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="far fa-grimace"></i></div>
+						  <div class="name">Horror</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="music" id="10402">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-music"></i></div>
+						  <div class="name">Music</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="mystery" id="9648">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-search"></i></div>
+						  <div class="name">Mystery</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="romance" id="10749">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="far fa-heart"></i></div>
+						  <div class="name">Romance</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="science fiction" id="878">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-robot"></i></div>
+						  <div class="name">Science Fiction</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="tv movie" id="10770">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-tv"></i></div>
+						  <div class="name">TV Movie</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="thriller" id="53">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-user-secret"></i></div>
+						  <div class="name">Thriller</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="war" id="10752">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-bomb"></i></div>
+						  <div class="name">War</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="checkbox" class="checkbox" name="western" id="37">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-hat-cowboy-side"></i></div>
+						  <div class="name">Western</div>
+						</div>
+					  </label>
+					  <label class="option_item">
+						<input type="button" class="checkbox2" onclick="start_search()">
+						<div class="option_inner quora">
+						  <div class="tickmark"></div>
+						  <div class="icon"><i class="fas fa-check"></i></div>
+						  <div class="name">Submit</div>
+						</div>
+					  </label>
+				</div>
+				
+			  
+			  </div>
+	</body>
+	<script>
+		//const mobileBtn = document.getElementById('no-button');
+		var myVar = "global"
+		var moviePoster = document.getElementById('img1');
+		var movieName = document.getElementById('movieName');
+		var movieRating = document.getElementById('movieRate')
+		var movieDescription = document.getElementById('description')
+		function dont_watch()
+		{
+			// This section creates a string for all the genres selected from the textboxes
+			var selected = [];
+			$('#checkboxes input:checked').each(function() {
+				selected.push($(this).attr('id'));
+			});
+			var i;
+			var genreString = ""
+			for (i = 0; i < selected.length; i++){
+				genreString += selected[i] + ","
+			}
+			console.log(genreString)
+
+			var entry = {
+				name: name.src,
+				genreString:genreString,
+				movieName: movieName.innerHTML
+			};
+		
+			fetch(`${window.location}/dontWatch`, {
+				method:"POST",
+				credentials:"include",
+				body:JSON.stringify(entry),
+				cache:"no-cache",
+				headers: new Headers({
+					"content-type": "application/json"
+				})
+			})
+			.then(function (response){
+
+				if(response.status !== 200){
+					console.log(`Response status was not 200: ${response.status}`)
+					return;
+				}
+
+				response.json().then(function (data){
+					movieName.innerHTML = data[0]['title']
+					movieRating.innerHTML = "Rating: " + data[0]['rating']
+					movieDescription.innerHTML = data[0]['description']
+					moviePoster.src = "https://image.tmdb.org/t/p/w500//" + data[0]['poster']
+				})
+
+			})
+        }
+
+		function do_watch()
+		{
+			var selected = [];
+			$('#checkboxes input:checked').each(function() {
+				selected.push($(this).attr('id'));
+			});
+			var i;
+			var genreString = ""
+			for (i = 0; i < selected.length; i++){
+				genreString += selected[i] + ","
+			}
+			console.log(genreString)
+
+			var entry = {
+				name: name.src,
+				genreString:genreString,
+				movieName: movieName.innerHTML
+			};
+			// This section creates a string for all the genres selected from the textboxes
+			fetch(`${window.location}/Watch`, {
+				method:"POST",
+				credentials:"include",
+				body:JSON.stringify(entry),
+				cache:"no-cache",
+				headers: new Headers({
+					"content-type": "application/json"
+				})
+			})
+			.then(function (response){
+
+				if(response.status !== 200){
+					console.log(`Response status was not 200: ${response.status}`)
+					return;
+				}
+
+				response.json().then(function (data){
+					movieName.innerHTML = data[0]['title']
+					movieRating.innerHTML = "Rating: " + data[0]['rating']
+					movieDescription.innerHTML = data[0]['description']
+					moviePoster.src = "https://image.tmdb.org/t/p/w500//" + data[0]['poster']
+				})
+
+			})
+        }
+
+		function start_search()
+		{
+			var selected = [];
+			var selected2 = [];
+			$('#checkboxes1 input:checked').each(function() {
+				selected.push($(this).attr('id'));
+			});
+
+			$('#checkboxes2 input:checked').each(function() {
+				selected2.push($(this).attr('id'));
+			});
+			var i;
+			var genreString = ""
+			var genreString2 = ""
+
+			for (i = 0; i < selected.length; i++){
+				genreString += selected[i] + ","
+			}
+
+			
+			for (i = 0; i < selected2.length; i++){
+				genreString2 += selected2[i] + ","
+			}
+
+			console.log(genreString)
+			console.log(genreString2)
+
+			var entry = {
+				genreString: genreString,
+			};
+
+			var entry2 = {
+				genreString: genreString2
+			}
+
+			fetch(`${window.location.origin}/setGenres`, {
+				method:"POST",
+				credentials:"include",
+				body:JSON.stringify(entry),
+				cache:"no-cache",
+				headers: new Headers({
+					"content-type": "application/json"
+				})
+			})
+
+			fetch(`${window.location.origin}/setExcludeGenres`, {
+				method:"POST",
+				credentials:"include",
+				body:JSON.stringify(entry2),
+				cache:"no-cache",
+				headers: new Headers({
+					"content-type": "application/json"
+				})
+			})
+
+			.then(function (response){
+
+				if(response.status !== 200){
+					console.log(`Response status was not 200: ${response.status}`)
+					return;
+				}
+
+				response.json().then(function (data){
+					movieName.innerHTML = data[0]['title']
+					movieRating.innerHTML = "Rating: " + data[0]['rating']
+					movieDescription.innerHTML = data[0]['description']
+					moviePoster.src = "https://image.tmdb.org/t/p/w500//" + data[0]['poster']
+				})
+
+			})
+		}
+
+
+		function changeToHome()
+		{
+			console.log("d1111111111111111")
+			window.location = window.location.origin
+			console.log("dsadsadasdsadas")
+			fetch(`${window.location}/SetDefault`, {
+				method:"POST",
+				credentials:"include",
+				body:JSON.stringify(entry),
+				cache:"no-cache",
+				headers: new Headers({
+					"content-type": "application/json"
+				})
+			})
+			.then(function (response){
+
+				if(response.status !== 200){
+					console.log(`Response status was not 200: ${response.status}`)
+					return;
+				}
+
+				response.json().then(function (data){
+					movieName.innerHTML = data[0]['title']
+					movieRating.innerHTML = "Rating: " + data[0]['rating']
+					movieDescription.innerHTML = data[0]['description']
+					moviePoster.src = "https://image.tmdb.org/t/p/w500//" + data[0]['poster']
+				})
+
+			})
+			console.log(window.location.origin)
+		}
+
+		function changeToMovieMatch()
+		{
+			window.location = window.location.origin
+			console.log(window.location.origin)
+		}
+
+		function changeToSignout()
+		{
+			window.location = `${window.location.origin}/signout`
+			console.log(window.location)
+		}
+
+		function changeToGenre()
+		{
+			window.location = `${window.location.origin}/genre`
+			console.log(window.location)
+		}
+
+		function changeToLogin()
+		{
+			window.location = `${window.location.origin}/login`
+			console.log(window.location)
+		}
+		function changeToInfo()
+		{
+			window.location = `${window.location.origin}/listInfo`
+			console.log(window.location)
+		}
+		function changeToList()
+		{
+			window.location = `${window.location.origin}/listTest`
+			console.log(window.location)
+		}
+
+		function changeToNoList()
+		{
+		window.location = `${window.location.origin}/listNoTest`
+		console.log(window.location)
+		}
+
+		document.addEventListener("DOMContentLoaded", function() {
+			var entry = {
+				genreString: "genreString",
+			};
+			fetch(`${window.location.origin}/checkSess`, {
+				method:"POST",
+				credentials:"include",
+				body:JSON.stringify(entry),
+				cache:"no-cache",
+				headers: new Headers({
+					"content-type": "application/json"
+				})
+			})
+			.then(function (response){
+				console.log(response.status)
+				if(response.status !== 200){
+					changeToLogin()
+				}
+			})
+		});
+
+		/*let image = document.getElementById('img1');
+		mobileBtn.addEventListener('click', () => {
+            image.src = "https://image.tmdb.org/t/p/w500///6KErczPBROQty7QoIsaa6wJYXZi.jpg";
+			submit_entry();
+        })*/ 
+	</script>
+</html>

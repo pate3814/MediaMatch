@@ -1,0 +1,89 @@
+<html>
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    
+<title>Login Form Design</title>
+    <link rel="stylesheet" type="text/css" href="static/css/style2.css">
+<body>
+    <div class="navbar">
+        <div class="container">
+            <a class="logo" href="#">Show<span>Swiper</span></a>
+
+            <img id="mobile-cta" class="mobile-menu" src="static/images/menu.svg" alt="Open Navigation">
+
+            <nav>
+                <img id="mobile-exit" class="mobile-menu-exit" src="static/images/exit.svg" alt="Close Navigation">
+                
+                <ul class="primary-nav">
+                    <li  onclick="changeToMovieMatch()" id = "movieMatchPage" name="movieMatchPage"><a >Movie Match</a></li>
+                    <li onclick="changeToGenre()"><a >Genre Selection</a></li>
+                </ul>
+
+                <ul class="secondary-nav">
+                    <li class="go-premium-cta"><a href="#">Show Swiper Application</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class = container>
+        <div class="loginbox">
+            <h1>Login Here</h1>
+            <form name="signup_form">
+                <p>Username</p>
+                <input type="text" name="name" placeholder="Enter Username">
+                <p>Email</p>
+                <input type="text" name="email" placeholder="Enter Email">
+                <p>Password</p>
+                <input type="password" name="password" placeholder="Enter Password">
+                <input type="submit" name="" value="Sign Up">
+            </form>
+        </div>
+    </div>
+
+</body>
+<script>
+    $("form[name=signup_form").submit(function(e){
+    var $form = $(this);
+    var $error = $form.find(".error");
+    var data = $form.serialize();
+    $.ajax({
+        url: "/signup",
+        type: "post",
+        data: data,
+        dataType: "json",
+        success: function(resp){
+            alert("success")
+            window.location = `${window.location.origin}/login`
+        },
+        error: function(resp){
+            alert("User Already Exists!")
+        }
+    })
+    e.preventDefault();
+})
+    function changeToMovieMatch()
+    {
+        window.location = window.location.origin
+        console.log(window.location.origin)
+    }
+
+    function changeToGenre()
+    {
+        window.location = `${window.location.origin}/genre`
+        console.log(window.location)
+    }
+
+    function changeToLogin()
+    {
+        window.location = `${window.location.origin}/login`
+        console.log(window.location)
+    }
+    function changeToInfo()
+		{
+			window.location = `${window.location.origin}/listInfo`
+			console.log(window.location)
+		}
+</script>
+</head>
+</html>

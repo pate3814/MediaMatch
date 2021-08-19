@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="static/css/style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,500&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+		/>
+		<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="navbar">
+			<div class="container">
+				<a class="logo" href="#">Show<span>Swiper</span></a>
+	
+				<img id="mobile-cta" class="mobile-menu" src="static/images/menu.svg" alt="Open Navigation">
+	
+				<nav>
+					<img id="mobile-exit" class="mobile-menu-exit" src="static/images/exit.svg" alt="Close Navigation">
+					
+					<ul class="primary-nav">
+						<!---<li class = current onclick="changeToMovieMatch()" id = "movieMatchPage" name="movieMatchPage"><a >Movie Match</a></li> -->
+						<li onclick="changeToGenre()"><a >Genre Selection</a></li>
+						<li onclick="changeToList()" ><a >Watch List</a></li>
+						<li onclick="changeToInfo()" ><a >Watch Info</a></li>
+              			<li onclick="changeToNoList()"><a >Pass List</a></li>
+						<li onclick="changeToSignout()"><a >Sign Out</a></li>
+					</ul>
+	
+					<ul class="secondary-nav">
+						<li class="go-premium-cta-current" onclick="changeToMovieMatch()"><a>Show Swiper Application</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<section class="hero">
+			<div class="container">
+				<form method='POST'></form>
+				<div class="container">
+					<div class="content">
+						<div class="card">
+							<div class="user">
+								<img id="img1" name="img1"
+									class="user"
+									src="https://image.tmdb.org/t/p/w500//8kNruSfhk5IoE4eZOc4UpvDn6tq.jpg"
+									alt=""
+								/>
+								<!---
+								<div class="profile">
+									<div class="name" name = "movieName" id = "movieName">myVar<span></span></div>
+									<div class="name" name = "movieRate" id = "movieRate"><span>Rating: 8.4</span></div>
+									<div class="local">
+										<i class="fas fa-map-marker-alt"></i>
+										<span id="description" name="description">A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground "fight clubs" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.</span>
+									</div>
+								</div>
+								----->
+							</div>
+						</div>
+						<div class="buttons">
+							<button id="no-button1" class="no" onclick="set_movie()">
+								<i class="fas fa-film"></i>
+							</button>
+							<button id="no-button" class="no" onclick="dont_watch()">
+								<i class="fas fa-times"></i>
+							</button>
+							<button id="yes-button"  class="heart" onclick="do_watch()">
+								<i class="fas fa-heart"></i>
+							</button>
+							<button id="yes-button"  class="heart" onclick="set_tv()">
+								<i class="fas fa-tv"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</form>
+			<section class="hero">
+				<div class="container">
+					<div class="right-col">
+						<h1 name = "movieName2" id = "movieName2">Raya and the Last Dragon</h1>
+						<h2 name = "movieRate2" id = "movieRate2">Ratings</h2>
+						<p class="subhead" id="description2" name="description2">Long ago, in the fantasy world of Kumandra, humans and dragons lived together in harmony. But when an evil force threatened the land, the dragons sacrificed themselves to save humanity. Now, 500 years later, that same evil has returned and it’s up to a lone warrior, Raya, to track down the legendary last dragon to restore the fractured land and its divided people</p>
+					</div>
+				</div>
+				<iframe id="vidSrc" name ="vidSrc"width="900" height="570" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen>
+				</iframe>
+			</section>
+			<!--
+			<div class="wrapper">
+				<div class="title">
+				</div>
+			  
+				<div class="container2" id="checkboxes">
+				  <label class="option_item">
+					<input type="checkbox" class="checkbox" name="action" id="28">
+					<div class="option_inner facebook">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-facebook-f"></i></div>
+					  <div class="name">Action</div>
+					</div>
+				  </label>
+				  <label class="option_item">
+					<input type="checkbox" class="checkbox" name="adventure" id="12">
+					<div class="option_inner twitter">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-twitter"></i></div>
+					  <div class="name">Adventure</div>
+					</div>
+				  </label>
+				  <label class="option_item">
+					<input type="checkbox" class="checkbox" name="animation" id="16">
+					<div class="option_inner instagram">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-instagram"></i></div>
+					  <div class="name">Animation</div>
+					</div>
+				  </label>
+				  <label class="option_item">
+					<input type="checkbox" class="checkbox" name="comedy" id="35">
+					<div class="option_inner linkedin">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-linkedin-in"></i></div>
+					  <div class="name">Comedy</div>
+					</div>
+				  </label>
+				  <label class="option_item">
+					<input type="checkbox" class="checkbox" name="crime" id="80">
+					<div class="option_inner whatsapp">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-whatsapp"></i></div>
+					  <div class="name">Crime</div>
+					</div>
+				  </label>
+				  <label class="option_item">
+					<input type="checkbox" class="checkbox" name="documentary" id="99">
+					<div class="option_inner google">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-google-plus-g"></i></div>
+					  <div class="name">Documentary</div>
+					</div>
+				  </label>
+				  <label class="option_item">
+					<input type="checkbox" class="checkbox" name="drama" id="18">
+					<div class="option_inner reddit">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-reddit"></i></div>
+					  <div class="name">Drama</div>
+					</div>
+				  </label>
+				  <label class="option_item">
+					<input type="checkbox" class="checkbox" name="family" id="10751">
+					<div class="option_inner quora">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-quora"></i></div>
+					  <div class="name">Family</div>
+					</div>
+				  </label>
+				  <label class="option_item">
+					<input type="checkbox" class="checkbox" name="fantasy" id="14">
+					<div class="option_inner quora">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-quora"></i></div>
+					  <div class="name">Fantasy</div>
+					</div>
+				  </label>
+				  <label class="option_item">
+					<input type="checkbox" class="checkbox" name="history" id="36">
+					<div class="option_inner quora">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-quora"></i></div>
+					  <div class="name">History</div>
+					</div>
+				  </label>
+				  <label class="option_item">
+					<input type="checkbox" class="checkbox" name="horror" id="27">
+					<div class="option_inner quora">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-quora"></i></div>
+					  <div class="name">Horror</div>
+					</div>
+				  </label>
+				  <label class="option_item">
+					<input type="checkbox" class="checkbox" name="music" id="10402">
+					<div class="option_inner quora">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-quora"></i></div>
+					  <div class="name">Music</div>
+					</div>
+				  </label>
+				  <label class="option_item">
+					<input type="checkbox" class="checkbox" name="mystery" id="9648">
+					<div class="option_inner quora">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-quora"></i></div>
+					  <div class="name">Mystery</div>
+					</div>
+				  </label>
+				  <label class="option_item">
+					<input type="checkbox" class="checkbox" name="romance" id="10749">
+					<div class="option_inner quora">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-quora"></i></div>
+					  <div class="name">Romance</div>
+					</div>
+				  </label>
+				  <label class="option_item">
+					<input type="checkbox" class="checkbox" name="science fiction" id="878">
+					<div class="option_inner quora">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-quora"></i></div>
+					  <div class="name">Science Fiction</div>
+					</div>
+				  </label>
+				  <label class="option_item">
+					<input type="checkbox" class="checkbox" name="tv movie" id="10770">
+					<div class="option_inner quora">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-quora"></i></div>
+					  <div class="name">TV Movie</div>
+					</div>
+				  </label>
+				  <label class="option_item">
+					<input type="checkbox" class="checkbox" name="thriller" id="53">
+					<div class="option_inner quora">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-quora"></i></div>
+					  <div class="name">Thriller</div>
+					</div>
+				  </label>
+				  <label class="option_item">
+					<input type="checkbox" class="checkbox" name="war" id="10752">
+					<div class="option_inner quora">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-quora"></i></div>
+					  <div class="name">War</div>
+					</div>
+				  </label>
+				  <label class="option_item">
+					<input type="checkbox" class="checkbox" name="western" id="37">
+					<div class="option_inner quora">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-quora"></i></div>
+					  <div class="name">Western</div>
+					</div>
+				  </label>
+				  <label class="option_item">
+					<input type="button" class="checkbox2" onclick="start_search()">
+					<div class="option_inner quora">
+					  <div class="tickmark"></div>
+					  <div class="icon"><i class="fab fa-quora"></i></div>
+					  <div class="name">Quora</div>
+					</div>
+				  </label>
+				</div>
+			  -->
+			</div>
+	</body>
+	<script>
+		//const mobileBtn = document.getElementById('no-button');
+		var myVar = "global"
+		var moviePoster = document.getElementById('img1');
+		var movieName = document.getElementById('movieName2');
+		var movieRating = document.getElementById('movieRate2')
+		var movieDescription = document.getElementById('description2')
+		var linkSrc = document.getElementById("vidSrc")
+		function dont_watch()
+		{
+			// This section creates a string for all the genres selected from the textboxes
+			var selected = [];
+			$('#checkboxes input:checked').each(function() {
+				selected.push($(this).attr('id'));
+			});
+			var i;
+			var genreString = ""
+			for (i = 0; i < selected.length; i++){
+				genreString += selected[i] + ","
+			}
+			console.log(genreString)
+
+			var entry = {
+				name: name.src,
+				genreString:genreString,
+				movieName: movieName.innerHTML
+			};
+		
+			fetch(`${window.location}/dontWatch`, {
+				method:"POST",
+				credentials:"include",
+				body:JSON.stringify(entry),
+				cache:"no-cache",
+				headers: new Headers({
+					"content-type": "application/json"
+				})
+			})
+			.then(function (response){
+
+				if(response.status !== 200){
+					console.log(`Response status was not 200: ${response.status}`)
+					return;
+				}
+
+				response.json().then(function (data){
+					movieName.innerHTML = data[0]['title']
+					movieRating.innerHTML = "Rating: " + data[0]['rating']
+					movieDescription.innerHTML = data[0]['description']
+					moviePoster.src = "https://image.tmdb.org/t/p/w500//" + data[0]['poster']
+					linkSrc.src = data[0]['vid']
+					console.log(data[0]['vid'])
+				})
+
+			})
+        }
+
+		function do_watch()
+		{
+			var selected = [];
+			$('#checkboxes input:checked').each(function() {
+				selected.push($(this).attr('id'));
+			});
+			var i;
+			var genreString = ""
+			for (i = 0; i < selected.length; i++){
+				genreString += selected[i] + ","
+			}
+			console.log(genreString)
+
+			var entry = {
+				name: name.src,
+				genreString:genreString,
+				movieName: movieName.innerHTML
+			};
+			// This section creates a string for all the genres selected from the textboxes
+			fetch(`${window.location}/Watch`, {
+				method:"POST",
+				credentials:"include",
+				body:JSON.stringify(entry),
+				cache:"no-cache",
+				headers: new Headers({
+					"content-type": "application/json"
+				})
+			})
+			.then(function (response){
+
+				if(response.status !== 200){
+					console.log(`Response status was not 200: ${response.status}`)
+					return;
+				}
+
+				response.json().then(function (data){
+					movieName.innerHTML = data[0]['title']
+					movieRating.innerHTML = "Rating: " + data[0]['rating']
+					movieDescription.innerHTML = data[0]['description']
+					moviePoster.src = "https://image.tmdb.org/t/p/w500//" + data[0]['poster']
+					linkSrc.src = data[0]['vid']
+				})
+
+			})
+        }
+
+		function start_search()
+		{
+			var selected = [];
+			$('#checkboxes input:checked').each(function() {
+				selected.push($(this).attr('id'));
+			});
+			var i;
+			var genreString = ""
+			for (i = 0; i < selected.length; i++){
+				genreString += selected[i] + ","
+			}
+
+			var entry = {
+				genreString: genreString,
+			};
+
+			fetch(`${window.location}/setGenres`, {
+				method:"POST",
+				credentials:"include",
+				body:JSON.stringify(entry),
+				cache:"no-cache",
+				headers: new Headers({
+					"content-type": "application/json"
+				})
+			})
+			.then(function (response){
+
+				if(response.status !== 200){
+					console.log(`Response status was not 200: ${response.status}`)
+					return;
+				}
+
+				response.json().then(function (data){
+					movieName.innerHTML = data[0]['title']
+					movieRating.innerHTML = "Rating: " + data[0]['rating']
+					movieDescription.innerHTML = data[0]['description']
+					moviePoster.src = "https://image.tmdb.org/t/p/w500//" + data[0]['poster']
+				})
+
+			})
+		}
+
+		function changeToMovieMatch()
+		{
+			window.location = window.location.origin
+			console.log(window.location.origin)
+		}
+
+		function changeToGenre()
+		{
+			window.location = `${window.location.origin}/genre`
+			console.log(window.location)
+		}
+
+		function changeToLogin()
+		{
+			window.location = `${window.location.origin}/login`
+			console.log(window.location)
+		}
+
+		function changeToSignout()
+		{
+			window.location = `${window.location.origin}/signout`
+			console.log(window.location)
+		}
+
+		function changeToList()
+		{
+			window.location = `${window.location.origin}/listTest`
+			console.log(window.location)
+		}
+
+		function changeToNoList()
+		{
+		window.location = `${window.location.origin}/listNoTest`
+		console.log(window.location)
+		}
+		document.addEventListener("DOMContentLoaded", function() {
+			var entry = {
+				genreString: "genreString",
+			};
+			fetch(`${window.location}/SetDefault`, {
+				method:"POST",
+				credentials:"include",
+				body:JSON.stringify(entry),
+				cache:"no-cache",
+				headers: new Headers({
+					"content-type": "application/json"
+				})
+			})
+			.then(function (response){
+
+				if(response.status !== 200){
+					changeToLogin()
+				}
+
+				response.json().then(function (data){
+					movieName.innerHTML = data[0]['title']
+					movieRating.innerHTML = "Rating: " + data[0]['rating']
+					movieDescription.innerHTML = data[0]['description']
+					moviePoster.src = "https://image.tmdb.org/t/p/w500//" + data[0]['poster']
+					linkSrc.src = data[0]['vid']
+				})
+
+			})
+		});
+
+		function set_tv()
+		{
+			var entry = {
+				genreString: "genreString",
+			};
+			fetch(`${window.location}/SetDefaultTV`, {
+				method:"POST",
+				credentials:"include",
+				body:JSON.stringify(entry),
+				cache:"no-cache",
+				headers: new Headers({
+					"content-type": "application/json"
+				})
+			})
+			.then(function (response){
+
+				response.json().then(function (data){
+					movieName.innerHTML = data[0]['title']
+					movieRating.innerHTML = "Rating: " + data[0]['rating']
+					movieDescription.innerHTML = data[0]['description']
+					moviePoster.src = "https://image.tmdb.org/t/p/w500//" + data[0]['poster']
+					linkSrc.src = data[0]['vid']
+				})
+
+			})
+		}
+		function changeToInfo()
+		{
+			window.location = `${window.location.origin}/listInfo`
+			console.log(window.location)
+		}
+		function set_movie()
+		{
+			var entry = {
+				genreString: "genreString",
+			};
+			fetch(`${window.location}/SetDefault`, {
+				method:"POST",
+				credentials:"include",
+				body:JSON.stringify(entry),
+				cache:"no-cache",
+				headers: new Headers({
+					"content-type": "application/json"
+				})
+			})
+			.then(function (response){
+
+				response.json().then(function (data){
+					movieName.innerHTML = data[0]['title']
+					movieRating.innerHTML = "Rating: " + data[0]['rating']
+					movieDescription.innerHTML = data[0]['description']
+					moviePoster.src = "https://image.tmdb.org/t/p/w500//" + data[0]['poster']
+					linkSrc.src = data[0]['vid']
+				})
+
+			})
+		}
+
+		/*let image = document.getElementById('img1');
+		mobileBtn.addEventListener('click', () => {
+            image.src = "https://image.tmdb.org/t/p/w500///6KErczPBROQty7QoIsaa6wJYXZi.jpg";
+			submit_entry();
+        })*/ 
+	</script>
+</html>

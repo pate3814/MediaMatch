@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css/style3.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+          width: 10px;
+        }
+        
+        /* Track */
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1; 
+        }
+         
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+          background: #888; 
+        }
+        
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+          background: #555; 
+        }
+        </style>
+    
+<body>
+  <div class="navbar">
+    <div class="container">
+      <a class="logo" href="#">Show<span>Swiper</span></a>
+
+      <img id="mobile-cta" class="mobile-menu" src="static/images/menu.svg" alt="Open Navigation">
+
+      <nav>
+        <img id="mobile-exit" class="mobile-menu-exit" src="static/images/exit.svg" alt="Close Navigation">
+        
+        <ul class="primary-nav">
+          <!---<li class = current onclick="changeToMovieMatch()" id = "movieMatchPage" name="movieMatchPage"><a >Movie Match</a></li> -->
+          <li onclick="changeToGenre()"><a >Genre Selection</a></li>
+          <li onclick="changeToList()"><a >Watch List</a></li>
+          <li onclick="changeToInfo()" class = "current" ><a >Watch Info</a></li>
+          <li onclick="changeToNoList()"><a >Pass List</a></li>
+          <li onclick="changeToSignout()"><a >Sign Out</a></li>
+        </ul>
+
+        <ul class="secondary-nav">
+          <li class="go-premium-cta" onclick="changeToMovieMatch()"><a>Show Swiper Application</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class = norm>
+    <ul id="content">
+      <script>
+          arr = []
+          arrID = []
+          console.log("helloooo")
+          document.addEventListener("DOMContentLoaded", function() {
+          var entry = {
+            genreString: "genreString",
+          };
+          fetch(`${window.location.origin}/setList`, {
+            method:"POST",
+            credentials:"include",
+            body:JSON.stringify(entry),
+            cache:"no-cache",
+            headers: new Headers({
+              "content-type": "application/json"
+            })
+          })
+          .then(function (response){
+            console.log(response.status)
+            if(response.status !== 200){
+              changeToLogin()
+            }
+            response.json().then(function (data)
+            {
+              console.log(data)
+              arr = data[0]['title']
+              arrID = data[0]['id']
+              console.log(data[0]['title'])
+              console.log(data[0]['id'])
+              let content = document.getElementById('content');
+              for(let i = 0; i < arr.length; i++){
+                //content.innerHTML += "<li id=" + '"' + i + '"' +  ">" + arr[i] + "</li>";
+                var li = document.createElement("li");
+                var spn = document.createElement("span");
+                var spn2 = document.createElement("span");
+                li.setAttribute('id',arr[i])
+                spn.appendChild(document.createTextNode(arr[i]));
+
+                spn2.appendChild(document.createTextNode(1 + i));
+                li.appendChild(spn)
+
+                content.appendChild(li);
+              }
+              var g = document.getElementById('content');
+              for (var i = 0, len = g.children.length; i < len; i++)
+              {
+                  (function(index){
+                      g.children[i].onclick = function(){
+                        index--;
+                        console.log(arrID[index])
+                        window.open("https://www.themoviedb.org/movie/" + String(arrID[index]))
+                      }    
+                  })(i);
+              }
+            })
+          })
+        });
+            
+      </script>
+    </ul>
+  </div>
+  
+</body>
+<script>
+  function changeToList()
+		{
+			window.location = `${window.location.origin}/listTest`
+			console.log(window.location)
+		}
+
+  function changeToNoList()
+  {
+    window.location = `${window.location.origin}/listNoTest`
+    console.log(window.location)
+  }
+  function changeToMovieMatch()
+  {
+    window.location = window.location.origin
+    console.log(window.location.origin)
+  }
+
+  function changeToGenre()
+  {
+    window.location = `${window.location.origin}/genre`
+    console.log(window.location)
+  }
+
+  function changeToLogin()
+  {
+    window.location = `${window.location.origin}/login`
+    console.log(window.location)
+  }
+
+  function changeToSignout()
+  {
+    window.location = `${window.location.origin}/signout`
+    console.log(window.location)
+  }
+  function changeToInfo()
+		{
+			window.location = `${window.location.origin}/listInfo`
+			console.log(window.location)
+		}
+</script>
+</html>
